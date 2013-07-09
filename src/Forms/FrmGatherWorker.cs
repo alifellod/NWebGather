@@ -66,12 +66,16 @@ namespace NWebGather.Forms
                 new Thread(work.GatherWorkWithList).Start();
             }
         }
-
+        /// <summary>
+        /// 一次(个网址)采集完成后，执行内容写入文件操作
+        /// </summary>
         private void work_OnWorkItemEnd(string curWebTitle, string curWebContent, string curUrl)
         {
+            //将采集到的内容写入到文件流中
             byte[] byteWebContent = Encoding.UTF8.GetBytes(curWebContent);
             if (_task.IsSaveOnlyFile)
             {
+                //如果当前内容标题为空，则可能分页
                 if (!string.IsNullOrEmpty(curWebTitle))
                 {
                     byte[] byteWebTitle = Encoding.UTF8.GetBytes(curWebTitle);
@@ -175,7 +179,7 @@ namespace NWebGather.Forms
         /// <returns></returns>
         private bool WorkInit()
         {
-            
+
             if (ckbIsStartClearMessageBox.Checked)
             {
                 rtxtMessage.Clear();
@@ -198,10 +202,6 @@ namespace NWebGather.Forms
             return true;
         }
 
-        private void btnLoadTask_Click(object sender, EventArgs e)
-        {
-            LoadGatherConfig();
-        }
         #region 检查任务参数输入
 
         /// <summary>
@@ -265,6 +265,7 @@ namespace NWebGather.Forms
             return true;
         }
         #endregion
+
         /// <summary>
         /// 根据选择的已保存任务加载采集配置
         /// </summary>
@@ -445,6 +446,11 @@ namespace NWebGather.Forms
             {
                 MessageBox.Show("输入的是一个不存在的路径", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cmbTaskList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadGatherConfig();
         }
 
     }

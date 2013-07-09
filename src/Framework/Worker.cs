@@ -18,6 +18,7 @@ namespace NWebGather.Framework
         /// 工作结束触发事件
         /// </summary>
         public event Action OnWorkEnd;
+
         /// <summary>
         /// 一次/地址采集完成触发事件，传入参数 采集内容的标题、内容、网址
         /// </summary>
@@ -87,7 +88,7 @@ namespace NWebGather.Framework
 
                 string curWebTitle = string.Empty;
                 string curWebContent = string.Empty;
-                
+
 
                 long curGatherCount = 0;
 
@@ -131,7 +132,7 @@ namespace NWebGather.Framework
             {
                 Error(ex, ErrorType.Global, curUrl);
             }
-            
+
             WorkEnd();
         }
 

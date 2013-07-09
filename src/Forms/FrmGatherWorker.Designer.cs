@@ -53,7 +53,6 @@
             this.cmbDefaultEncode = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnSaveTask = new System.Windows.Forms.Button();
-            this.btnLoadTask = new System.Windows.Forms.Button();
             this.ckbIsStartClearMessageBox = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbTaskList = new System.Windows.Forms.ComboBox();
@@ -301,17 +300,6 @@
             this.btnSaveTask.UseVisualStyleBackColor = true;
             this.btnSaveTask.Click += new System.EventHandler(this.btnSaveTask_Click);
             // 
-            // btnLoadTask
-            // 
-            this.btnLoadTask.Location = new System.Drawing.Point(620, 7);
-            this.btnLoadTask.Name = "btnLoadTask";
-            this.btnLoadTask.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadTask.TabIndex = 3;
-            this.btnLoadTask.Text = "加载任务";
-            this.btnLoadTask.UseVisualStyleBackColor = true;
-            this.btnLoadTask.Visible = false;
-            this.btnLoadTask.Click += new System.EventHandler(this.btnLoadTask_Click);
-            // 
             // ckbIsStartClearMessageBox
             // 
             this.ckbIsStartClearMessageBox.AutoSize = true;
@@ -344,7 +332,7 @@
             this.cmbTaskList.Name = "cmbTaskList";
             this.cmbTaskList.Size = new System.Drawing.Size(511, 20);
             this.cmbTaskList.TabIndex = 0;
-            this.cmbTaskList.SelectedIndexChanged += new System.EventHandler(this.btnLoadTask_Click);
+            this.cmbTaskList.SelectedIndexChanged += new System.EventHandler(this.cmbTaskList_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -549,7 +537,6 @@
             this.Controls.Add(this.ckbIsDealSamePage);
             this.Controls.Add(this.ckbIsSaveOnlyFile);
             this.Controls.Add(this.btnStart);
-            this.Controls.Add(this.btnLoadTask);
             this.Controls.Add(this.btnFormatConfig);
             this.Controls.Add(this.btnOpenDirectory);
             this.Controls.Add(this.btnSaveTask);
@@ -621,7 +608,6 @@
         private System.Windows.Forms.ComboBox cmbDefaultEncode;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnSaveTask;
-        private System.Windows.Forms.Button btnLoadTask;
         private System.Windows.Forms.CheckBox ckbIsStartClearMessageBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbTaskList;

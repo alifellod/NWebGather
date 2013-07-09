@@ -60,7 +60,7 @@
         /// </summary>
         public string SamePageMark { get; set; }
         /// <summary>
-        /// 同页时,第一页的标识
+        /// (分页)同一页时,第一页的标识
         /// </summary>
         public string FirstPageMark { get; set; }
         /// <summary>
