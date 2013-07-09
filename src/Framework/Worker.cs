@@ -167,12 +167,6 @@ namespace NWebGather.Framework
 
                 curUrl = _task.StartUrl;
                 string html;
-                //针对博客园网摘的特殊处理
-                /*html = httpRequest.DownloadString("http://passport.cnblogs.com/login.aspx", "");
-                string value1 = Regex.Match(html, "<input type=\"hidden\" name=\"__VIEWSTATE\" id=\"__VIEWSTATE\" value=\"(?<value>.*?)\" />").Groups["value"].Value;
-                string value2 = Regex.Match(html, "<input type=\"hidden\" name=\"__EVENTVALIDATION\" id=\"__EVENTVALIDATION\" value=\"(?<value>.*?)\" />").Groups["value"].Value;
-                html = httpRequest.Post("http://passport.cnblogs.com/login.aspx", "http://passport.cnblogs.com/login.aspx", "__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE={0}&__EVENTVALIDATION={1}&tbUserName=xrszx&tbPassword=44098219&btnLogin=%E7%99%BB++%E5%BD%95&txtReturnUrl=http%3A%2F%2Fnews.cnblogs.com%2Fn%2F163304%2F".FormatWith(value1, value2));
-                */
 
                 bool hasContent = true;
                 int sectionIndex = 1;
@@ -186,8 +180,6 @@ namespace NWebGather.Framework
                     html = _httpRequest.DownloadString(curUrl, string.Empty);
 
                     //正则出内容页面链接集合
-                    //rgContentPageUrl = new Regex("<h2 class=\"news_entry\">.*?<a href=\"(?<value>.*?)\" .*?</a>.*?</h2>");
-                    //rgContentPageUrl = new Regex("<h2 class=\"news_entry\">[\\S\\s]*?href=\"(?<value>.*?)\"[\\S\\s]*?</a>[\\S\\s]*?</h2>");
                     MatchCollection mc = _rgContentPageUrl.Matches(html);
                     if (mc.Count > 0)
                     {
@@ -202,15 +194,10 @@ namespace NWebGather.Framework
                             {
                                 continue;
                             }
-                            //针对博客园网摘的特殊处理
-                            //if (!gatherUrl.Contains("cnblogs.com"))
-                            //    continue;
-
                             ContentGather(gatherUrl, sectionIndex++);
                             curGatherCount++;
                         }
                     }
-                    //rgListPageUrl = new Regex("<div id='pager'>.*?</span>.*?href=\"(?<value>.*?)\">.*?</a>");
                     Match m = _rgListPageUrl.Match(html);
                     hasContent = m.Success;
                     if (hasContent)
@@ -243,7 +230,6 @@ namespace NWebGather.Framework
                 //1、请求内容页面
 
                 string html = _httpRequest.DownloadString(curUrl, string.Empty);
-                //html = HttpUtility.HtmlDecode(html);
                 //2、正则出标题、内容、链接
                 Match m = _rgWebTtile.Match(html);
                 if (m.Success)

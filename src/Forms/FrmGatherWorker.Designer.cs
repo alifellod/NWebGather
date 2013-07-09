@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTaskName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtSourceName = new System.Windows.Forms.TextBox();
             this.btnOpenDirectory = new System.Windows.Forms.Button();
+            this.ttMain = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.nudGatherCountMax)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,6 +194,9 @@
             // 
             // rtxtMessage
             // 
+            this.rtxtMessage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rtxtMessage.Location = new System.Drawing.Point(12, 387);
             this.rtxtMessage.Name = "rtxtMessage";
             this.rtxtMessage.Size = new System.Drawing.Size(632, 156);
@@ -357,6 +362,7 @@
             this.txtSamePageMark.Size = new System.Drawing.Size(121, 21);
             this.txtSamePageMark.TabIndex = 9;
             this.txtSamePageMark.Text = "(\\d*?)";
+            this.ttMain.SetToolTip(this.txtSamePageMark, "可以是正则表达式");
             // 
             // ckbIsDealSamePage
             // 
@@ -386,6 +392,7 @@
             this.txtFirstPageMark.Size = new System.Drawing.Size(121, 21);
             this.txtFirstPageMark.TabIndex = 10;
             this.txtFirstPageMark.Text = "(1)";
+            this.ttMain.SetToolTip(this.txtFirstPageMark, "普通字符，非正则表达式");
             // 
             // rdbGatherModel_PageByPage
             // 
@@ -636,5 +643,6 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtSourceName;
         private System.Windows.Forms.Button btnOpenDirectory;
+        private System.Windows.Forms.ToolTip ttMain;
     }
 }

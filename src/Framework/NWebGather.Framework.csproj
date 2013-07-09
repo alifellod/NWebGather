@@ -38,7 +38,6 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="ErrorType.cs" />
-    <Compile Include="GRTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Task.cs" />
     <Compile Include="Worker.cs" />

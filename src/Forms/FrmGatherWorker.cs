@@ -99,7 +99,7 @@ namespace NWebGather.Forms
             else
             {
                 btnStart.Enabled = true;
-                rtxtMessage.AppendText("\n*******工作完成******\n");
+                UpdateWorkMessage("\n*******工作完成******\n");
                 _curSavaFile.Close();
             }
         }
@@ -118,6 +118,8 @@ namespace NWebGather.Forms
             else
             {
                 rtxtMessage.AppendText(msg);
+                rtxtMessage.Select(rtxtMessage.Text.Length, 0);
+                rtxtMessage.ScrollToCaret();
             }
         }
 
@@ -156,15 +158,15 @@ namespace NWebGather.Forms
             else
             {
                 btnTest.Enabled = true;
-                rtxtMessage.AppendText("\n*******工作完成******\n");
+                UpdateWorkMessage("\n*******工作完成******\n");
             }
         }
 
         private void workTest_OnWorkItemEnd(string curWebTitle, string curWebContent, string curUrl)
         {
-            UpdateWorkMessage("\n页面标题：{0}\n\n".FormatWith(curWebTitle));
-            UpdateWorkMessage("\n页面网址：{0}\n\n".FormatWith(curUrl));
-            UpdateWorkMessage("\n页面内容：{0}\n\n".FormatWith(curWebContent));
+            UpdateWorkMessage("\n***页面标题：\n{0}\n".FormatWith(curWebTitle));
+            UpdateWorkMessage("\n***页面网址：\n{0}\n".FormatWith(curUrl));
+            UpdateWorkMessage("\n***页面内容：\n{0}\n".FormatWith(curWebContent));
             Application.DoEvents();
         }
         /// <summary>
@@ -348,7 +350,7 @@ namespace NWebGather.Forms
                     }
                 }
                 if (!quiesceDeal)
-                    MessageBox.Show("任务已保存", "网络采集器", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UpdateWorkMessage("任务已保存\n");
 
             }
             catch (Exception ex)

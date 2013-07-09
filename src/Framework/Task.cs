@@ -2,20 +2,6 @@
 {
     public class Task
     {
-        /*
-         <taskName>500年来谁著史</taskName>
-	<startUrl>http://data.book.163.com/book/section/0000JFbX/0000JFbX0.html</startUrl>
-	<title>&quot;article-sectioname&quot;&gt;(?&lt;value&gt;.*?)&lt;/div&gt;</title>
-	<content>&quot;bk-article-body&quot;&gt;(?&lt;value&gt;[\s\S]*?)&lt;/div&gt;</content>
-	<nextUrl>返回目录页&lt;/a&gt;[\s\S]*?&lt;a href=&quot;(?&lt;value&gt;.*?)&quot; target=&quot;_self&quot;[\s\S]*?id=&quot;nextsection&quot;&gt;下一章&lt;/a&gt;</nextUrl>
-	<savePath>C:\Users\Administrator\Desktop\gather\</savePath>
-	<saveOnlyFile>1</saveOnlyFile>
-	<startClearMessageBox>1</startClearMessageBox>
-	<defaultEncode>gb2312</defaultEncode>
-	<dealSamePage>1</dealSamePage>
-	<firstPageMark>(1)</firstPageMark>
-	<samePageMark>(\d*?)</samePageMark>
-         */
         /// <summary>
         /// 任务名称
         /// </summary>

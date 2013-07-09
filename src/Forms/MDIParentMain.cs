@@ -5,21 +5,12 @@ namespace NWebGather.Forms
 {
     public partial class MDIParentMain : Form
     {
-        private int _childFormNumber;
         private FrmGatherWorker _formCommonTask;
         private FrmAbout _formAbout;
 
         public MDIParentMain()
         {
             InitializeComponent();
-        }
-
-        private void ShowNewForm(object sender, EventArgs e)
-        {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "窗口 " + _childFormNumber++;
-            childForm.Show();
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
@@ -90,6 +81,11 @@ namespace NWebGather.Forms
         }
 
         private void MDIParentMain_Load(object sender, EventArgs e)
+        {
+            OpenCommonTask();
+        }
+
+        private void tsmiCommonTask_Click(object sender, EventArgs e)
         {
             OpenCommonTask();
         }
