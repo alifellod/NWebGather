@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 与程序集关联的信息。
 [assembly: AssemblyTitle("NWebGather")]
 [assembly: AssemblyDescription(@"功能介绍：现阶段实现的功能有根据设定的规则进行逐页采集与逐列表采集文本。
-开源地址：
+开源地址：https://github.com/alifellod/NWebGather
 博客地址:http://www.cnblogs.com/yelaiju/
 QQ群：9524888
 欢迎大家入群交流共享采集正则，讨论技术，讨论人生……")]
