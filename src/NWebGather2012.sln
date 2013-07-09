@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWebGather.Forms", "Forms\NWebGather.Forms.csproj", "{419DCFF6-1293-4576-83D4-034196DB301E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWebGather.Framework", "Framework\NWebGather.Framework.csproj", "{A86DA9C7-3785-48AF-82D0-2C34D55017A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWebGather.Helper", "Helper\NWebGather.Helper.csproj", "{CA8B62F3-2A3D-4551-98EE-4AD93E0BADD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{419DCFF6-1293-4576-83D4-034196DB301E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419DCFF6-1293-4576-83D4-034196DB301E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419DCFF6-1293-4576-83D4-034196DB301E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419DCFF6-1293-4576-83D4-034196DB301E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A86DA9C7-3785-48AF-82D0-2C34D55017A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A86DA9C7-3785-48AF-82D0-2C34D55017A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A86DA9C7-3785-48AF-82D0-2C34D55017A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A86DA9C7-3785-48AF-82D0-2C34D55017A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA8B62F3-2A3D-4551-98EE-4AD93E0BADD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA8B62F3-2A3D-4551-98EE-4AD93E0BADD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA8B62F3-2A3D-4551-98EE-4AD93E0BADD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA8B62F3-2A3D-4551-98EE-4AD93E0BADD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

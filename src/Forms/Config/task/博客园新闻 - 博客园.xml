@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>博客园新闻</TaskName>
+  <SourceName />
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://news.cnblogs.com/</StartUrl>
+  <ListPageUrl>&lt;div id='pager'&gt;.*?&lt;/span&gt;.*?href=\"(?&lt;value&gt;.*?)\"&gt;.*?&lt;/a&gt;</ListPageUrl>
+  <WebTitle>&lt;div id="news_title"&gt;.*?&lt;a .*?&gt;(?&lt;value&gt;.*?)&lt;/a&gt;</WebTitle>
+  <WebContent>id="news_body"&gt;(?&lt;value&gt;[\s\S]*?)&lt;/div&gt;</WebContent>
+  <ContentPageUrl>&lt;h2 class="news_entry"&gt;.*?&lt;a href="(?&lt;value&gt;.*?)" .*?&lt;/a&gt;.*?&lt;/h2&gt;</ContentPageUrl>
+  <SavePath>C:\Users\Administrator\Desktop\gather\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>false</IsDealSamePage>
+  <SamePageMark />
+  <FirstPageMark />
+  <GatherCountMax>10</GatherCountMax>
+</Task>

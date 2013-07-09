@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <WrapTag>
+|&lt;/p&gt;|&lt;br/&gt;|&lt;br .*?/&gt;|&lt;br&gt;|&lt;/li&gt;|&lt;/div&gt;</WrapTag>
+  <WhiteTag>　　|　　 | |\r|\n|\t|\f|\v|本文链接|&lt;span class='MASSfcc2d546b028'&gt;[\s\S]*?&lt;/span&gt;
+|&lt;center.*?&gt;|&lt;/center&gt;|&lt;img[\s\S]*?/&gt;|&lt;img[\s\S]*?&gt;|&lt;/img&gt;|&lt;a.*?&gt;|&lt;/a&gt;|&lt;strong&gt;|&lt;strong .*?&gt;|&lt;/strong&gt;|&lt;iframe.*?&gt;|&lt;/iframe&gt;|&lt;span&gt;|&lt;span .*?&gt;|&lt;/span&gt;|&lt;ul&gt;|&lt;ul .*?&gt;|&lt;/ul&gt;|&lt;blockquote&gt;|&lt;blockquote .*?&gt;|&lt;/blockquote&gt;|&lt;hr/&gt;|&lt;em&gt;|&lt;/em&gt;|&lt;b .*?&gt;|&lt;b&gt;|&lt;/b&gt;|&lt;wbr&gt;|&lt;wbr .*?&gt;|&lt;/wbr&gt;|&lt;font.*?&gt;|&lt;/font&gt;|&lt;table&gt;|&lt;table .*?&gt;|&lt;/table&gt;|&lt;h\d&gt;|&lt;h\d .*?&gt;|&lt;/h\d&gt;|&lt;pre&gt;|&lt;pre .*?&gt;|&lt;/pre&gt;</WhiteTag>
+  <IndentTag>
+|&lt;p&gt;|&lt;p .*?&gt;|&lt;li&gt;|&lt;li .*?&gt;|&lt;div&gt;|&lt;div .*?&gt;</IndentTag>
+  <WrapTagTo>\r\n</WrapTagTo>
+  <WhiteTagTo />
+  <IndentTagTo>\t</IndentTagTo>
+  <OutputTitleFormat>\n\n第{0}章：{1}\n\n</OutputTitleFormat>
+</Config>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>博客园知识库-程序人生</TaskName>
+  <SourceName>博客园</SourceName>
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://kb.cnblogs.com/list/1011/</StartUrl>
+  <ListPageUrl>&lt;div id="pager_block_top"&gt;[\s\S]*?&lt;span class='current'&gt;\d+&lt;/span&gt;&lt;a href="(?&lt;value&gt;.*?)"&gt;\d+&lt;/a&gt;</ListPageUrl>
+  <WebTitle>&lt;h1 class="contents_header"&gt;&lt;a href=".*?"&gt;(?&lt;value&gt;.*?)&lt;/a&gt;&lt;/h1&gt;</WebTitle>
+  <WebContent>&lt;div id="ArticleCnt" class="content_words"&gt;(?&lt;value&gt;[\s\S]*?)&lt;/div&gt;</WebContent>
+  <ContentPageUrl>&lt;div class="list_title"&gt;[\s\S]*?href="(?&lt;value&gt;.*?)"</ContentPageUrl>
+  <SavePath>C:\Users\Administrator\Desktop\gather\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>false</IsDealSamePage>
+  <SamePageMark />
+  <FirstPageMark />
+  <GatherCountMax>200</GatherCountMax>
+</Task>

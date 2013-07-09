@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>刘仰博客</TaskName>
+  <SourceName>新浪</SourceName>
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://blog.sina.com.cn/s/articlelist_1093974672_0_1.html</StartUrl>
+  <ListPageUrl>&lt;li class="SG_pgon" title="当前所在页"&gt;\d &lt;/li&gt;&lt;li&gt;&lt;a href="(?&lt;value&gt;.*?)" title="跳转至第 \d  页"&gt;</ListPageUrl>
+  <WebTitle>&lt;h2 .*?&gt;(?&lt;value&gt;.*?)&lt;/h2&gt;</WebTitle>
+  <WebContent>&lt;div id="sina_keyword_ad_area2" class="articalContent  "&gt;(?&lt;value&gt;[\s\S]*?)相关文章：</WebContent>
+  <ContentPageUrl>&lt;span class="atc_title"&gt;[\s\S]*?&lt;a title=".*?" target="_blank" href="(?&lt;value&gt;.*?)"&gt;.*?&lt;/a&gt;&lt;/span&gt;</ContentPageUrl>
+  <SavePath>C:\Users\Administrator\Desktop\gather\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>true</IsDealSamePage>
+  <SamePageMark>\(\d*?\)</SamePageMark>
+  <FirstPageMark>(1)</FirstPageMark>
+  <GatherCountMax>20</GatherCountMax>
+</Task>

@@ -1,0 +1,12 @@
+﻿[config]
+Config\HtmlFormatConfig.xml
+[task]
+Config\task\
+[grtask]
+Config\grtask\
+
+/*
+配置文件路径设置
+如果没有配置，或者格式不对，则采用默认
+在程序运行的根目录下
+*/

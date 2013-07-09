@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>扒皮水浒：水泊梁山无好汉</TaskName>
+  <SourceName>天涯</SourceName>
+  <GatherModel>逐页</GatherModel>
+  <StartUrl>http://bbs.tianya.cn/post-free-3019638-11.shtml#ty_vip_look[%E5%9C%B0%E7%93%9C%E7%86%8A%E8%80%81%E5%85%AD]</StartUrl>
+  <ListPageUrl>&lt;a href="(?&lt;value&gt;.*?)"&gt;Next &gt;&lt;/a&gt;</ListPageUrl>
+  <WebTitle>&lt;span class="s_title"&gt;[^&lt;]*?&lt;span style="font-weight:400;"&gt;(?&lt;value&gt;.*?)&lt;/span&gt;</WebTitle>
+  <WebContent>&lt;div class="atl-main"&gt;(?&lt;value&gt;[\s\S]*?)&lt;div class="clearfix"&gt;</WebContent>
+  <ContentPageUrl>&lt;div class="atl-pages"&gt;[\s\S]*?&lt;strong&gt;\d{1,}&lt;/strong&gt;\s?&lt;a href="(?&lt;value&gt;.*?)"</ContentPageUrl>
+  <SavePath>C:\Users\Administrator\Desktop\gather\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>true</IsDealSamePage>
+  <SamePageMark>\(\d*?\)</SamePageMark>
+  <FirstPageMark>(1)</FirstPageMark>
+  <GatherCountMax>20</GatherCountMax>
+</Task>

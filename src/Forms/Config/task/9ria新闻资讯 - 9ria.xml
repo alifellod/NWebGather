@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>9ria新闻资讯</TaskName>
+  <SourceName>9ria</SourceName>
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://bbs.9ria.com/forum-43-1.html</StartUrl>
+  <ListPageUrl>&lt;div class="pg"&gt;.*?&lt;strong&gt;\d*?&lt;/strong&gt;&lt;a href="(?&lt;value&gt;.*?)"&gt;\d*?&lt;/a&gt;</ListPageUrl>
+  <WebTitle>&lt;a href="[^&lt;]*?" id="thread_subject"&gt;(?&lt;value&gt;.*?)&lt;/a&gt;</WebTitle>
+  <WebContent>&lt;td class="t_f" id="postmessage_\d*?"&gt;(?&lt;value&gt;[\s\S]*?)&lt;/td&gt;</WebContent>
+  <ContentPageUrl>&lt;a href="(?&lt;value&gt;[^&lt;\"]*?)" onclick="atarget\(this\)" class="xst" &gt;.*?&lt;/a&gt;</ContentPageUrl>
+  <SavePath>C:\Users\Administrator\Desktop\gather\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>true</IsDealSamePage>
+  <SamePageMark>\(\d*?\)</SamePageMark>
+  <FirstPageMark>(1)</FirstPageMark>
+  <GatherCountMax>100</GatherCountMax>
+</Task>
