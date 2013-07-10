@@ -16,7 +16,7 @@ namespace NWebGather.Helper
             StringBuilder retVal = new StringBuilder();
 
             // 检查是否为空
-            if ((inputString != null) && (inputString != String.Empty))
+            if (!string.IsNullOrEmpty(inputString))
             {
                 inputString = inputString.Trim();
 
@@ -86,7 +86,7 @@ namespace NWebGather.Helper
         /// <returns></returns>			
         public static string SqlText(string sqlInput, int maxLength)
         {
-            if (sqlInput != null && sqlInput != string.Empty)
+            if (!string.IsNullOrEmpty(sqlInput))
             {
                 sqlInput = sqlInput.Trim();
                 if (sqlInput.Length > maxLength)//按最大长度截取字符串

@@ -71,6 +71,7 @@ namespace NWebGather.Forms
         /// </summary>
         private void work_OnWorkItemEnd(string curWebTitle, string curWebContent, string curUrl)
         {
+            curWebTitle = curWebTitle ?? "";
             //将采集到的内容写入到文件流中
             byte[] byteWebContent = Encoding.UTF8.GetBytes(curWebContent);
             if (_task.IsSaveOnlyFile)
@@ -90,7 +91,7 @@ namespace NWebGather.Forms
                     curSavaFile2.Write(byteWebContent, 0, byteWebContent.Length);
                 }
             }
-            UpdateWorkMessage("\n已采集：{0}，网址：{1}".FormatWith(curWebTitle, curUrl));
+            UpdateWorkMessage("\n已采集：{0} 网址：{1}".FormatWith(curWebTitle.Trim(), curUrl));
             Application.DoEvents();
         }
 

@@ -3,17 +3,8 @@ using System.Text;
 
 namespace NWebGather.Helper
 {
-    /// <summary>
-    /// string 的扩展方法
-    /// </summary>
     public static class ListExtension
     {
-        /// <summary>
-        /// 比默认string.Format高效的替代方法
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="split"></param>
-        /// <returns></returns>
         public static string Join(this List<string> list, string split)
         {
             if (list == null || list.Count == 0)
