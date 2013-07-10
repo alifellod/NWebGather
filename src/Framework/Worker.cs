@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using NWebGather.Helper;
@@ -49,7 +50,7 @@ namespace NWebGather.Framework
         /// </summary>
         /// <param name="ex"></param>
         /// <param name="errorType"></param>
-        /// <param name="curUrl"></param>
+        /// <param name="curUrl">当前工作网址</param>
         private void Error(Exception ex, ErrorType errorType, string curUrl)
         {
             if (OnError != null)
@@ -85,16 +86,12 @@ namespace NWebGather.Framework
                 _rgWebContent = new Regex(_task.WebContent);
                 _rgContentPageUrl = new Regex(_task.ContentPageUrl);
                 _rgSamePageMark = new Regex(_task.SamePageMark);
-
-                string curWebTitle = string.Empty;
-                string curWebContent = string.Empty;
-
-
+              
                 long curGatherCount = 0;
 
-                bool hasContent = true;
+                bool hasNextContentUrl = true;
                 int sectionIndex = 1;
-                while (hasContent)
+                while (hasNextContentUrl)
                 {
                     if (curGatherCount > _task.GatherCountMax)
                     {
@@ -103,27 +100,14 @@ namespace NWebGather.Framework
 
                     //1、请求第一个页面
                     string html = _httpRequest.DownloadString(curUrl, string.Empty);
+                    ContentPickup(curUrl, html, sectionIndex++);
 
-                    //2、正则出标题、内容、链接
-                    Match m = _rgWebTtile.Match(html);
-                    if (m.Success)
-                    {
-                        curWebTitle = m.Groups["value"].Value;
-                    }
-                    m = _rgWebContent.Match(html);
-                    if (m.Success)
-                    {
-                        curWebContent = m.Groups["value"].Value;
-                    }
-
-                    ContentProcess(curWebTitle, curWebContent, curUrl, sectionIndex++);
-
-                    m = _rgContentPageUrl.Match(html);
-                    hasContent = m.Success;
-                    if (hasContent)
+                    Match m = _rgContentPageUrl.Match(html);
+                    hasNextContentUrl = m.Success;
+                    if (hasNextContentUrl)
                     {
                         curUrl = RequestHelper.UrlFormat(m.Groups["value"].Value, curUrl);
-                        hasContent = !string.IsNullOrEmpty(curUrl);
+                        hasNextContentUrl = !string.IsNullOrEmpty(curUrl);
                     }
                     curGatherCount++;
                 }
@@ -219,28 +203,53 @@ namespace NWebGather.Framework
         /// <summary>
         /// 采集指定网址的内容
         /// </summary>
-        /// <param name="curUrl">网址</param>
+        /// <param name="curUrl">当前工作网址</param>
         /// <param name="sectionIndex">章节号</param>
         private void ContentGather(string curUrl, int sectionIndex)
+        {
+            try
+            {
+                //1、请求内容页面
+                string html = _httpRequest.DownloadString(curUrl, string.Empty);
+                ContentPickup(curUrl, html, sectionIndex);
+
+            }
+            catch (Exception ex)
+            {
+                Error(ex, ErrorType.ContentGather, curUrl);
+            }
+
+        }
+        /// <summary>
+        /// 标题及内容提取(包含匹配及处理)
+        /// </summary>
+        /// <param name="curUrl">当前工作网址</param>
+        /// <param name="html">采集到的页面html源码</param>
+        /// <param name="sectionIndex"></param>
+        private void ContentPickup(string curUrl, string html, int sectionIndex)
         {
             try
             {
                 string curWebTitle = string.Empty;
                 string curWebContent = string.Empty;
 
-                //1、请求内容页面
-
-                string html = _httpRequest.DownloadString(curUrl, string.Empty);
-                //2、正则出标题、内容、链接
+                //正则出标题、内容、链接
                 Match m = _rgWebTtile.Match(html);
                 if (m.Success)
                 {
                     curWebTitle = m.Groups["value"].Value;
                 }
-                m = _rgWebContent.Match(html);
-                if (m.Success)
+                //远方(QQ 503012008)  贡献的更新
+                //将内容匹配修改为一个集合，而不是仅仅一个匹配
+                var mcContent = _rgWebContent.Matches(html);
+                StringBuilder sb = new StringBuilder();
+                if (mcContent.Count > 0)
                 {
-                    curWebContent = m.Groups["value"].Value;
+                    foreach (Match item in mcContent)
+                    {
+                        sb.Append(item.Groups["value"].Value);
+                    }
+                    curWebContent = sb.ToString();
                 }
                 ContentProcess(curWebTitle, curWebContent, curUrl, sectionIndex);
             }
@@ -248,7 +257,6 @@ namespace NWebGather.Framework
             {
                 Error(ex, ErrorType.ContentGather, curUrl);
             }
-
         }
         /// <summary>
         /// 将指定的内容进行处理

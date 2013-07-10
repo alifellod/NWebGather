@@ -6,7 +6,7 @@
   <StartUrl>http://bbs.tianya.cn/post-free-3019638-1.shtml</StartUrl>
   <ListPageUrl>&lt;a href="(?&lt;value&gt;.*?)"&gt;Next &gt;&lt;/a&gt;</ListPageUrl>
   <WebTitle>&lt;span class="s_title"&gt;[^&lt;]*?&lt;span style="font-weight:400;"&gt;(?&lt;value&gt;.*?)&lt;/span&gt;</WebTitle>
-  <WebContent>&lt;div class="atl-main"&gt;(?&lt;value&gt;[\s\S]*?)&lt;div class="clearfix"&gt;</WebContent>
+  <WebContent>&lt;div class="atl-item" _host="%E5%9C%B0%E7%93%9C%E7%86%8A%E8%80%81%E5%85%AD" id="\d+"  js_username="%E5%9C%B0%E7%93%9C%E7%86%8A%E8%80%81%E5%85%AD" js_resTime="[\s\S]*?"&gt;[\s\S]*?&lt;strong class="host"&gt;楼主&lt;/strong&gt;[\s\S]*?&lt;div class="bbs-content"&gt;(?&lt;value&gt;[\s\S]*?)&lt;/div&gt;</WebContent>
   <ContentPageUrl>&lt;div class="atl-pages"&gt;[\s\S]*?&lt;strong&gt;\d*?&lt;/strong&gt;\s?&lt;a href="(?&lt;value&gt;.*?)"</ContentPageUrl>
   <SavePath>C:\Users\Administrator\Desktop\gather\</SavePath>
   <IsSaveOnlyFile>true</IsSaveOnlyFile>

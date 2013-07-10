@@ -169,9 +169,9 @@ namespace NWebGather.Forms
 
         private void workTest_OnWorkItemEnd(string curWebTitle, string curWebContent, string curUrl)
         {
-            UpdateWorkMessage("\n***页面标题：\n{0}\n".FormatWith(curWebTitle));
-            UpdateWorkMessage("\n***页面网址：\n{0}\n".FormatWith(curUrl));
-            UpdateWorkMessage("\n***页面内容：\n{0}\n".FormatWith(curWebContent));
+            UpdateWorkMessage("\n***页面标题：{0}\n".FormatWith(curWebTitle.Trim()));
+            UpdateWorkMessage("***页面网址：{0}\n".FormatWith(curUrl));
+            UpdateWorkMessage("***页面内容：\n{0}\n".FormatWith(curWebContent));
             Application.DoEvents();
         }
         /// <summary>
