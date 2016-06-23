@@ -131,9 +131,6 @@
     <Content Include="Config\task\9ria新闻资讯 - 9ria.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\task\刘仰博客 - 新浪.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Config\task\博客园新闻 - 博客园.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -143,12 +140,10 @@
     <Content Include="Config\task\博客园知识库-项目管理 - 博客园.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Config\task\孔庆东博客 - 新浪.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Config\task\扒皮水浒：水泊梁山无好汉 - 天涯.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Config\task\游戏大观gamelook - 游戏大观gamelook.xml" />
     <Content Include="Resources\down button.ico" />
     <Content Include="Resources\firebug-large.png" />
     <None Include="Resources\bug.png" />

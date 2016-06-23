@@ -3,7 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NWebGather.Helper.StringExtension
+//////////////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright (c) 2014-2015, 王胜国
+//  All rights reserved.
+//  email 49480040@qq.com
+//
+//////////////////////////////////////////////////////////////////////////////////////
+namespace NWebGather.Helper
 {
     /// <summary>
     /// string 的扩展方法

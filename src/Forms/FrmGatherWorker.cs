@@ -4,12 +4,17 @@ using System.Windows.Forms;
 using NWebGather.Framework;
 using NWebGather.Helper;
 using System.IO;
-using NWebGather.Helper.StringExtension;
 using System.Xml.Serialization;
 using System.Web;
 using System.Threading;
 using System.Diagnostics;
-
+//////////////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright (c) 2014-2015, 王胜国
+//  All rights reserved.
+//  email 49480040@qq.com
+//
+//////////////////////////////////////////////////////////////////////////////////////
 namespace NWebGather.Forms
 {
     public partial class FrmGatherWorker : Form

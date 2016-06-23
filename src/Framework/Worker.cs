@@ -3,8 +3,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using NWebGather.Helper;
-using NWebGather.Helper.StringExtension;
-
+//////////////////////////////////////////////////////////////////////////////////////
+//
+//  Copyright (c) 2014-2015, 王胜国
+//  All rights reserved.
+//  email 49480040@qq.com
+//
+//////////////////////////////////////////////////////////////////////////////////////
 namespace NWebGather.Framework
 {
     public class Worker

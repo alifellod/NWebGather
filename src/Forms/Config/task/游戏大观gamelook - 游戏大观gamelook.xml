@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>游戏大观gamelook</TaskName>
+  <SourceName>游戏大观gamelook</SourceName>
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://www.gamelook.com.cn/page/1/</StartUrl>
+  <ListPageUrl>&lt;a href="(?&lt;value&gt;[^"]*?)"&gt;Next &amp;raquo;&lt;/a&gt;</ListPageUrl>
+  <WebTitle>&lt;h1 class="entry-title"&gt;(?&lt;value&gt;.*?)&lt;/h1&gt;</WebTitle>
+  <WebContent>&lt;div class="entry entry-content"&gt;(?&lt;value&gt;[\s\S]*?)&lt;div class="wp_rp_wrap</WebContent>
+  <ContentPageUrl>&lt;h2 class="entry-title"&gt;&lt;a href="(?&lt;value&gt;.*?)" title=</ContentPageUrl>
+  <SavePath>L:\My Documents\Y阅读采集\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>true</IsDealSamePage>
+  <SamePageMark>\(\d*?\)</SamePageMark>
+  <FirstPageMark>(1)</FirstPageMark>
+  <GatherCountMax>100</GatherCountMax>
+</Task>
