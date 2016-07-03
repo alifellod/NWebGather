@@ -57,7 +57,7 @@ namespace NWebGather.Forms
             work.OnError += w_OnError;
             work.OnWorkItemEnd += work_OnWorkItemEnd;
             work.OnWorkEnd += work_OnWorkEnd;
-            _curSavaFile = new FileStream("{0}{1}.txt".FormatWith(_task.SavePath, _task.TaskName), FileMode.Create, FileAccess.ReadWrite);
+            _curSavaFile = new FileStream("{0}{1}-{2:MM-dd}.txt".FormatWith(_task.SavePath, _task.TaskName,DateTime.Now), FileMode.Create, FileAccess.ReadWrite);
 
             UpdateWorkMessage("采集处理开始");
 
