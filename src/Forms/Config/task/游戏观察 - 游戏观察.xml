@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>游戏观察</TaskName>
+  <SourceName>游戏观察</SourceName>
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://www.youxiguancha.com/news/</StartUrl>
+  <ListPageUrl>&gt;&lt;a class="pageNext" href="(?&lt;value&gt;.*?)"&gt;</ListPageUrl>
+  <WebTitle>&lt;h1 class="tit"&gt;(?&lt;value&gt;.*?)&lt;/h1&gt;</WebTitle>
+  <WebContent>&lt;div class="detail_cont"&gt;(?&lt;value&gt;[\s\S]*?)&lt;/div&gt;[^&lt;]*?&lt;script src="http://www.youxiguancha.com/sta</WebContent>
+  <ContentPageUrl>&lt;div class="inf_c"&gt;[^\&lt;]*?&lt;h2&gt;&lt;a href="(?&lt;value&gt;.*?)" target="_blank".*?&lt;/a&gt;&lt;/h2&gt;</ContentPageUrl>
+  <SavePath>L:\My Documents\Y阅读采集\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>true</IsDealSamePage>
+  <SamePageMark>\(\d*?\)</SamePageMark>
+  <FirstPageMark>(1)</FirstPageMark>
+  <GatherCountMax>5</GatherCountMax>
+</Task>

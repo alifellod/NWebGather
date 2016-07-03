@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Task xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TaskName>游戏智库</TaskName>
+  <SourceName>游戏智库</SourceName>
+  <GatherModel>列表</GatherModel>
+  <StartUrl>http://www.gamethk.com/news/type/0.html</StartUrl>
+  <ListPageUrl>&gt;&lt;a class="next" href="(?&lt;value&gt;.*?)"&gt;下一页&lt;/a&gt;&lt;/</ListPageUrl>
+  <WebTitle>&lt;h4 class="reportDetailH4 color24 fwblod center mb20 mt30"&gt;(?&lt;value&gt;.*?)&lt;/h4&gt;</WebTitle>
+  <WebContent>&lt;section class="reportDetailContent textident20 font16px color24 bgfff"&gt;(?&lt;value&gt;[\s\S]*?)&lt;div class="reportDetailBottomWeixin bdt1d9 style_flex"&gt;</WebContent>
+  <ContentPageUrl>&lt;a class="newsBox01" href="(?&lt;value&gt;.*?)" target="_blank"&gt;</ContentPageUrl>
+  <SavePath>L:\My Documents\Y阅读采集\</SavePath>
+  <IsSaveOnlyFile>true</IsSaveOnlyFile>
+  <IsStartClearMessageBox>true</IsStartClearMessageBox>
+  <DefaultEncode>utf-8</DefaultEncode>
+  <IsDealSamePage>true</IsDealSamePage>
+  <SamePageMark>\(\d*?\)</SamePageMark>
+  <FirstPageMark>(1)</FirstPageMark>
+  <GatherCountMax>5</GatherCountMax>
+</Task>
